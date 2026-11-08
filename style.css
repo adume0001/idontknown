@@ -1,0 +1,119 @@
+/* =========================================================
+   Responsive gallery - style.css
+   Mobile view is the default. Two media queries add the
+   Tablet view (772px) and the Large Screen view (998px).
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 1.05rem;
+  color: #222222;
+  background-color: #EDE9FE;
+  background-image: linear-gradient(135deg, #FCE7F3 0%, #EDE9FE 45%, #DBEAFE 100%);
+  background-attachment: fixed;
+}
+
+header {
+  padding: 2rem 1rem 0;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  color: #5B21B6;
+}
+
+.note {
+  margin: 0;
+  color: #4C1D95;
+}
+
+main {
+  padding: 1.5rem 1rem 1rem;
+}
+
+/* ---------- MOBILE VIEW (default): one div per row ---------- */
+.gallery {
+  display: block;
+}
+
+.item {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border: 3px solid #A78BFA;
+  border-top: 8px solid #EC4899;
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.25);
+}
+
+.item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.item h2 {
+  margin: 0.75rem 0 0.25rem;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #5B21B6;
+}
+
+.item p {
+  margin: 0;
+  line-height: 1.6;
+  color: #3F514B;
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background-color: #5B21B6;
+  background-image: linear-gradient(90deg, #5B21B6, #BE185D);
+  color: #FFFFFF;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Query #1: TABLET VIEW (two divs per row) ---------- */
+@media (min-width: 772px) {
+  /* display changes from block to flex so the divs sit side by side */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  /* divs are 45% of the viewport width */
+  .item {
+    width: 45%;
+  }
+
+  /* images are no more than 30% of the viewport height */
+  .item img {
+    width: auto;
+    max-width: 100%;
+    max-height: 30vh;
+    margin: 0 auto;
+  }
+}
+
+/* ---------- Query #2: LARGE SCREEN VIEW (three divs per row) ---------- */
+@media (min-width: 998px) {
+  .item {
+    width: 30%;
+  }
+}
